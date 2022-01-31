@@ -11,7 +11,7 @@ const listDrivers = getDrivers();
 
 // get drivers methode
 const getAllDrivers = (req, res) => {
-  res.send(getDrivers());
+  res.send(listDrivers);
 };
 
 // create driver methode
