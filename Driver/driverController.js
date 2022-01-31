@@ -36,7 +36,7 @@ const createDriver = (req, res) => {
 // Driver Status
 
 const driverStatus = (req,res) => {
-    console.log(listDrivers);
+    // console.log(listDrivers);
     // Get the id of the current driver
     const idDriver = req.params.id
     // console.log(idDriver);
@@ -49,7 +49,7 @@ const driverStatus = (req,res) => {
         }
     });
     
-    console.log(findDriver)
+    console.log(listDrivers.indexOf(findDriver))
     res.send(`Mr. ${findDriver.prenom} is ${findDriver.status} `)
 }
 
