@@ -15,6 +15,11 @@ const saveRoad = (data) => {
     fs.writeFileSync('road.json',rStringfy)
 }
 
+app.get ('/', (req,res) => {
+    const allRoad = getAllData();
+    res.send(allRoad);
+})
+
 app.post ('/', (req,res) => {
 
     const r = getAllData();
