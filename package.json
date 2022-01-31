@@ -4,7 +4,7 @@
   "description": "Une solution d’organisation de voyage entre différentes personnes sur un même véhicule (un minibus)",
   "main": "index.js",
   "scripts": {
-    "start": "node notifications.js"
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",

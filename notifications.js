@@ -22,6 +22,6 @@ app.use(bodyparser.urlencoded({ extended: false }));
 
 //app.use('/', index);
 
-require('mongoose').connect('mongodb://localhost/tattletale');
-module.exports = notifications;
+require("./driver.json");
+module.exports = app;
 
