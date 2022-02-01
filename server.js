@@ -1,12 +1,13 @@
 //import express && fs
 const express = require("express");
+//initiation application express
 const app = express();
 app.use(express.json());
 
 
 const router = require("./route");
 
-//initiation application express
+
 
 //initiation port
 const PORT = 3000;

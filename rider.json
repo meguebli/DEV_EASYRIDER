@@ -1,9 +1,0 @@
-[
-  { "ridername": "jane", "email": "jane@mail.com", "date": "01/01/2022" },
-  { "ridername": "jone", "email": "jone@mail.com", "date": "02/01/2022" },
-  { "ridername": "pascal", "email": "pascal@ymail.com", "date": "02/01/2022" },
-  { "ridername": "eric", "email": "eric@ymail.com", "date": "03/01/2022" },
-  { "ridername": "bilel", "email": "bilel@mail.com", "date": "04/01/2022" },
-  { "ridername": "adam", "email": "adam@mail.com", "date": "07/01/2022" }
-  
-]

@@ -12,7 +12,7 @@ const addfeedback = (req, res) => {
   const dateF= new Date();
   var mydate= dateF.getDate() +"/"+ (dateF.getMonth()+1) + "/"+ dateF.getFullYear();
   //const feed = req.body;
-  listFeed.push({idfeedback: req.body.idfeedback, ridername: req.body.ridername, feedbackcontent: req.body.feedbackcontent, date: mydate});
+  listFeed.push({"idfeedback": req.body.idfeedback, "ridername": req.body.ridername, "feedbackcontent": req.body.feedbackcontent, "date": mydate, "tripLib": req.body.tripLib});
   savefeedback(listFeed);
   res.send(listFeed);
 };
