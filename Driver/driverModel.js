@@ -9,9 +9,9 @@ class Driver {
   }
 }
 
-const saveChange = (data) => {
+const saveChangeDriver = (data) => {
   const stringifyData = JSON.stringify(data);
   fs.writeFileSync('driverData.json', stringifyData);
 };
 
-module.exports = { Driver, saveChange };
+module.exports = { Driver, saveChangeDriver };

@@ -1,4 +1,4 @@
-const { Car, saveChange } = require('./carModel');
+const { Car, saveChangeCar } = require('./carModel');
 
 const fs = require('fs');
 
@@ -7,6 +7,10 @@ const allCars = () => {
   return JSON.parse(cars);
 };
 const listCars = allCars();
+
+
+// GET METHOD : GET ALL THE CARS
+
 const getAllCars = (req, res) => {
   res.send(listCars);
 };
@@ -27,7 +31,7 @@ const postCar = (req, res) => {
       nbPlace: addCar.nbPlace
   }
   listCars.push(car)
-  saveChange(listCars)
+  saveChangeCar(listCars)
   res.status(200).json({listCars})
 };
 
@@ -57,12 +61,22 @@ const updateCar = (req,res) => {
     listCars[indexCar] = carToSave
     console.log(listCars.indexOf(searchedCar));
     console.log(listCars)
-    saveChange(listCars)
+    saveChangeCar(listCars)
     res.status(200).json({listCars})
   
   
 }
 
 
+const getActiveCars = (req,res) => {
+  const activeCars = listCars.filter(function(post,index){
+    if(post.Status ==="Active"){
+      return true
+    }
+  })
+  res.status(200).json({activeCars})
+}
 
-module.exports = {getAllCars, postCar, updateCar }
+
+
+module.exports = {getAllCars, postCar, updateCar, allCars,getActiveCars }

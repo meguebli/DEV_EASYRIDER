@@ -9,11 +9,11 @@ class Car {
   }
 }
 
-const saveChange = (data) => {
+const saveChangeCar = (data) => {
   const stringifyData = JSON.stringify(data);
   fs.writeFileSync('carData.json', stringifyData);
 };
 
 
 
-module.exports = {Car, saveChange}
+module.exports = {Car, saveChangeCar}
