@@ -1,0 +1,25 @@
+{
+  "name": "dev_easyrider",
+  "version": "1.0.0",
+  "description": "Une solution d’organisation de voyage entre différentes personnes sur un même véhicule (un minibus)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meguebli/DEV_EASYRIDER.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meguebli/DEV_EASYRIDER/issues"
+  },
+  "homepage": "https://github.com/meguebli/DEV_EASYRIDER#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security",
+    "nodeman": "^1.1.2"
+  }
+}
