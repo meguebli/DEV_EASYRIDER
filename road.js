@@ -53,6 +53,15 @@ app.delete('/:id',(req,res) => {
     res.send({msg: " road deleted"})
 })
 
+
+app.get('/:id', (req,res)=>{
+
+    const i = req.params.id;
+    const roads = getAllData();
+    const roadID = roads.find(road => road.id === i);
+    
+    res.send(roadID);
+})
 app.listen(8080,()=> {
     console.log("server running");
 })
