@@ -30,7 +30,67 @@ const newDriver=1;
 //notifyEndTrip methode
 const endTrip=1;
 
-//
+//notifyEndTrip methode
+const newFeedback=1;
+
+//NotifyDelayTrip methode
+const NotifyDelayTrip=1;
+
+//End trip verification
+if(NotifyDelayTrip===1){
+  app.post('/subscribe', (req, res) => {
+    const subscription = req.body;
+    res.status(201).json({});
+    
+  // send notification
+    const payloadNotifyDelayTrip = JSON.stringify({ titleNotifyDelayTrip: "END TRIP" });
+     
+    console.log(subscription);
+  
+    webpush.sendNotification(subscription, payloadNotifyDelayTrip).catch(error => {
+      console.error(error.stack);
+    });
+  });
+}
+
+//notifyEndTrip methode
+const notifyNewCar=1;
+
+//End trip verification
+if(notifyNewCar===1){
+  app.post('/subscribe', (req, res) => {
+    const subscription = req.body;
+    res.status(201).json({});
+    
+  // send notification
+    const payloadnotifyNewCar = JSON.stringify({ titlenotifyNewCar: "END TRIP" });
+     
+    console.log(subscription);
+  
+    webpush.sendNotification(subscription, payloadnotifyNewCar).catch(error => {
+      console.error(error.stack);
+    });
+  });
+}
+
+//End trip verification
+if(newFeedback===1){
+  app.post('/subscribe', (req, res) => {
+    const subscription = req.body;
+    res.status(201).json({});
+    
+  // send notification
+    const payloadNewFeedback = JSON.stringify({ titleNewFeedback: "END TRIP" });
+     
+    console.log(subscription);
+  
+    webpush.sendNotification(subscription, payloadNewFeedback).catch(error => {
+      console.error(error.stack);
+    });
+  });
+}
+
+//End trip verification
 if(endTrip===1){
   app.post('/subscribe', (req, res) => {
     const subscription = req.body;
@@ -41,7 +101,7 @@ if(endTrip===1){
      
     console.log(subscription);
   
-    webpush.sendNotification(subscription, payloadpayloadEndTrip).catch(error => {
+    webpush.sendNotification(subscription, payloadEndTrip).catch(error => {
       console.error(error.stack);
     });
   });

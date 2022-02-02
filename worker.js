@@ -13,6 +13,36 @@ self.addEventListener('push', ev => {
 self.addEventListener('push', ev => {
     const data = ev.data.json();
     console.log('Got push', data);
+    self.registration.showNotification(data.titleNotifyDelayTrip, {
+      
+      
+    });
+    
+  });
+
+self.addEventListener('push', ev => {
+    const data = ev.data.json();
+    console.log('Got push', data);
+    self.registration.showNotification(data.titlenotifyNewCar, {
+      
+      
+    });
+    
+  });
+  
+self.addEventListener('push', ev => {
+    const data = ev.data.json();
+    console.log('Got push', data);
+    self.registration.showNotification(data.titleNewFeedback, {
+      
+      
+    });
+    
+  });
+
+self.addEventListener('push', ev => {
+    const data = ev.data.json();
+    console.log('Got push', data);
     self.registration.showNotification(data.titleEndTrip, {
       
       
