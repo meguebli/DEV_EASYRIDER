@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "matricule": "12TUN2345",
+    "category": "sedaneCoupe",
+    "nbPlace": 3
+  },
+  {
+    "id": "2",
+    "matricule": "213TUN2345",
+    "category": "minibus-a",
+    "nbPlace": 21
+  },
+  { "id": "3", "matricule": "213TUN2345", "category": "HAT", "nbPlace": 6 }
+]

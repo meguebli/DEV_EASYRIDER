@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "nom": "ben test",
+        "isWaiting": true,
+       "road":"r1"
+    },
+    {
+        "id": 2,
+        "nom": "ben test",
+        "isWaiting": false,
+        "road":"r2"
+       
+        
+    }]

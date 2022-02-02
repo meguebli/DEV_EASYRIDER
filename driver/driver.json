@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "nom": "ben test",
+        "isActive": false,
+        "online" : false
+        
+    },
+    {
+        "id": 2,
+        "nom": "ben test",
+        "isActive": true,
+        "online" : true
+    },
+    {
+        "id": 3,
+        "nom": "ben test",
+        "isActive": true,
+         "online" : true
+    }
+]
