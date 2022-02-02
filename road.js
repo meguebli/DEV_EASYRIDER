@@ -62,6 +62,17 @@ app.get('/:id', (req,res)=>{
     
     res.send(roadID);
 })
+
+app.get ('/interRoad/:idroad', (req,res)=>{
+
+    const idr = req.params.idroad;
+    const roads = getAllData();
+    const roID = roads.find(road => road.id === idr);
+    res.send(`interRoad pour ${idr} sont : ${roID.interRoad}`);
+
+})
+
+
 app.listen(8080,()=> {
     console.log("server running");
 })
