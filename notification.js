@@ -27,6 +27,25 @@ const drivers = JSON.parse(jsonData)
 // new driver methode
 const newDriver=1;
 
+//notifyEndTrip methode
+const endTrip=1;
+
+//
+if(endTrip===1){
+  app.post('/subscribe', (req, res) => {
+    const subscription = req.body;
+    res.status(201).json({});
+    
+  // send notification
+    const payloadEndTrip = JSON.stringify({ titleEndTrip: "END TRIP" });
+     
+    console.log(subscription);
+  
+    webpush.sendNotification(subscription, payloadpayloadEndTrip).catch(error => {
+      console.error(error.stack);
+    });
+  });
+}
 // new driver verication
 if(newDriver===1){
   app.post('/subscribe', (req, res) => {
@@ -34,7 +53,7 @@ if(newDriver===1){
     res.status(201).json({});
     
   // send notification
-    const payloadNewDriver = JSON.stringify({ title: "NEW DRIVER" });
+    const payloadNewDriver = JSON.stringify({ titleDriver: "NEW DRIVER" });
      
     console.log(subscription);
   
@@ -52,7 +71,7 @@ app.post('/subscribe', (req, res) => {
   res.status(201).json({});
   
 // send notification
-  const payload = JSON.stringify({ title: nameD });
+  const payload = JSON.stringify({ title: nameD+"  Actif" });
    
   console.log(subscription);
 
@@ -68,4 +87,4 @@ app.use(require('express-static')('./'));
 //server and port
 app.listen(9000);
 
-console.log("your server as run on port 8000");
+console.log("your server as run on port 9000");
