@@ -7,5 +7,4 @@ router.get('/rider/isWaiting',getWaitingRider)
 router.get('/rider/byRoad',getRiderByRouad)
 
 
-
 module.exports = router
