@@ -1,6 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const app = express();
 app.use(express.json());
@@ -13,16 +13,15 @@ const register = (req, res, next) => {
     return res.status(401).json({ error: "utilisateur déjà existant!" });
   } else {
     const userName = req.body.userName;
-    const userpass = req.body.userpass
-    //.toString();
+    const userpass = req.body.userpass.toString();
     const useremail = req.body.useremail;
-    //const salt = bcrypt.genSaltSync(6);
-    //const hashedPassword = bcrypt.hashSync(userpass, salt);
+    const salt = bcrypt.genSaltSync(6);
+    const hashedPassword = bcrypt.hashSync(userpass, salt);
     const objUser = {
       userId:Date.now().toString(),
       userName: req.body.userName,
-     // userpass: hashedPassword,
-      userpass:req.body.userpass,
+      userpass: hashedPassword,
+      //userpass:req.body.userpass,
       useremail: req.body.useremail,
     };
 
@@ -37,7 +36,8 @@ const register = (req, res, next) => {
    const foundUser = user.find(user => user.useremail === userParams);
    const userparams = req.params.userpass;
     if (foundUser) { 
-     const match =user.find(user=>user.userpass ===userparams)
+     //const match =user.find(user=>user.userpass ===userparams)
+     const match = bcrypt.compare(userparams,foundUser.userpass)
      if (match) {
       const jsonData = fs.readFileSync("user/user.json")
       const users = JSON.parse(jsonData)
